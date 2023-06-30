@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Slab:wght@400;600&display=swap');
+
 *{
     margin: 0;
     padding:0;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
 }
 
 :root{
@@ -15,5 +19,63 @@
 body{
     min-height: 100vh;
     background-color: var(--firstColor);
+}
+
+/* ###HEADER### */
+.nameName{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* .nav-links{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--dark);
+    display: none;
+    
+
+} */
+/* a{
+    font-size: 3.6rem;
+    text-decoration: none;
+    color:black
+} */
+
+h1{
+    font-size: 3.6rem;
+    font-family: 'Roboto Slab', serif;
+    color: var(--light);
+
+}
+
+header p {
+    font-size: 2.4rem;
+    color: var(--light);
+    padding:1em 2em;
+    text-align: center;
+    
+}
+
+button{
+    width: 175px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: var(--light);
+    color: var(--firstColor);
+    font-size: 1.8rem;
+    border: solid var(--firstColor) 1px;
+    transition: .3s, ;
+}
+
+button:hover{
+    background-color: var(--firstColor);
+    color: var(--light);
+    border: solid var(--light) 1px;
+    cursor:pointer;
+    
+}
+header img{
+    height: 470px;
 }
 
