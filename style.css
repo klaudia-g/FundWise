@@ -21,6 +21,10 @@ body{
     background-color: var(--firstColor);
 }
 
+
+
+
+
 /* ###HEADER### */
 .nameName{
     display: flex;
@@ -41,7 +45,9 @@ body{
     text-decoration: none;
     color:black
 } */
-
+.header{
+    min-width: 200px;
+}
 h1{
     font-size: 3.6rem;
     font-family: 'Roboto Slab', serif;
@@ -79,3 +85,121 @@ header img{
     height: 470px;
 }
 
+/* ###ABOUT US### */
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+    padding: 20px 20px 40px 20px;
+
+}
+
+.about-us{
+    background-color: var(--light);
+}
+
+
+h2{
+    font-size: 2.2rem;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-family: 'Roboto Slab', serif;
+    margin-bottom: 20px;
+}
+
+
+.about-us p{
+    font-size: 1.4rem;
+    color: var(--dark);
+    text-align: justify;
+    line-height: 130%;
+}
+
+.about-us img{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 25px;
+    
+}
+.about-us .img-container{
+    position:  relative;
+    margin-top:30px;
+}
+
+
+.about-us .img-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--firstColor);
+    opacity: 0.33; 
+    z-index: 1;
+    border-radius: 25px;
+  }
+ /* ############ */
+
+  @media(min-width: 500px){
+
+    h2{
+        font-size: 2.4rem;
+            }
+
+
+    .about-us p{
+        font-size: 1.8rem;
+        
+    }
+  }
+
+  /* ###ABOUT US BIG### */
+  @media(min-width: 1000px){
+    section{
+        flex-direction:row;
+        align-items: center;
+        padding: 40px 40px 60px 40px;
+
+    }
+
+    
+    h2{
+        font-size: 2.6rem;
+        margin-top:40px;
+        text-align: left;
+    }
+   
+    
+    .about-us p{
+        font-size: 2rem;
+        line-height: 130%;
+    }
+    .about-us .text-container{
+        order:2;
+    }
+    .about-us img{
+        width: 40vw;
+        max-width: 500px;
+        height: auto;
+        aspect-ratio: 10/9; 
+    }
+    .about-us .img-container{
+        position:  relative;
+        margin-top: 60px;
+        margin-right: 60px;
+    }
+    
+    
+
+  }
+  @media(min-width:1600px){
+    section{
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+}
