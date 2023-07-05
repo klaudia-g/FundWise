@@ -86,7 +86,7 @@ header img{
 }
 
 /* ###ABOUT US### */
-section{
+section, footer{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -206,11 +206,11 @@ h2{
 
 /* #########PROJECTS############### */
 
-.projects h2{
+.projects h2, footer h2{
     color: var(--light);
 }
 
-.projects .section-description {
+.projects .section-description, footer .section-description{
     color: var(--light);
 }
 
@@ -429,5 +429,78 @@ h4{
 
 }
 
+/* ###########FOOTER########## */
 
 
+
+footer img{
+    width: 100px;
+    fill: var(--light);
+
+}
+
+footer strong{
+font-size: 2.0rem;
+margin: 25px 0;
+color: var(--light);
+}
+.footer-icons{
+align-self: start;
+}
+.icon{
+    color: var(--secondColor);
+    font-size: 4rem;
+    margin: 10px 5px;
+
+}
+
+@media(min-width: 1000px){
+    footer{
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        padding: 40px 40px 60px 40px;
+        gap: 20px;
+    }
+    footer h2{
+        order: 1;
+        justify-self: left;
+        margin: 0;
+        align-self: end;
+
+        
+    }
+    footer img{
+        order: 3;
+        grid-row: 2 / span 3;
+        width: 120px;
+    
+    }
+    footer strong{
+        font-size: 2.2rem;
+        order: 4;
+        grid-row-start: 2;
+        justify-self: left;
+    }
+    footer .section-description{
+        order: 2;
+        grid-row: 2/span3;
+    }
+    .footer-icons{
+        order: 5;
+        grid-column-start:3;
+        grid-row-start:3;
+        justify-self: left;
+        
+    }
+
+}
+/* ########## */
+@media(min-width:1600px){
+    footer{
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+}
