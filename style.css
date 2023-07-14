@@ -14,19 +14,45 @@
     --light: #FCF8FF;
 
 }
+html {
+    scroll-behavior: smooth;
+  }
 
 
 body{
     min-height: 100vh;
+    width: 100%;
     background-color: var(--firstColor);
+    overflow-x: hidden;
 }
+/* ######ANIMATIONS##### */
 
-
+@keyframes movement {
+    from {
+        transform: translateY(-5px);
+    }
+    to {
+        transform: translateY(5px);
+    }
+    
+    }
+    
+    @keyframes bigMovement{
+     from {
+            transform: translateY(-10px);
+    }
+    to {
+            transform: translateY(10px);
+        }
+        
+        }
+        
+        
 
 
 /* ###HEADER### */
 
-header, section, footer{
+header, section, #contact{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,8 +69,6 @@ header{
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
-
-
     
 }
 nav{
@@ -75,10 +99,17 @@ nav{
     color: var(--dark);
     font-size: 2rem;
     text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom .3s;
+    
+ }
+ .nav-links a:hover{
+    border-bottom: 2px solid var(--dark);
     
  }
  .logo{
     position: relative;
+    
  }
  .logo p{
     position: absolute;
@@ -122,11 +153,19 @@ h1{
     padding:1em 2em;  
     text-align: center;
 }
+.header-container>a{
+    display: block;
+    width: 175px;
+    min-height: 50px;
+    margin:10px auto;
+  
+
+}
 
 button{
-    width: 175px;
-    height: 50px;
-    margin:auto;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
     border-radius: 30px;
     background-color: var(--light);
     color: var(--firstColor);
@@ -142,20 +181,79 @@ button:hover{
     cursor:pointer;
     
 }
-header img{
+.header-img-container{
+    position: relative;
+}
+
+
+
+.flower{
+    position: absolute;
+    top:70%;
+    left:50%;
+    width: 4rem;
+    height: auto;  
+    animation-name: movement;
+    animation-duration:4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out; 
+    
+}
+.girl + img {
+    width:5rem;
+    top: 80%;
+    left: 10%;
+    
+}
+.flower:last-child{
+    width:5rem;
+    top: 80%;
+    left: 80%;
+    
+}
+
+.girl{
     min-width: 240px;
     max-width:90vw;
+    transform: rotate(45deg);
+    animation-name: bigMovement;
+    animation-duration:4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+
+
+
+
+}
+
+@media(min-width:500px){
+    .girl{
+       
+        max-width: 500px;
+
+    }
+    .nav-links a{
+    
+        font-size: 2.5rem;
+    
+        
+     }
 }
 
 @media(min-width: 1000px){
     header{
         padding: 40px 40px 60px 40px;
+       
     }
     .logo p{
         font-size: 2.4rem;
     }
     .ourName{
        flex-direction: row; 
+       justify-content: space-between;
+       width: 100%;
     }
     .header-container{
         justify-content: flex-start;
@@ -170,17 +268,26 @@ header img{
         padding: 40px 0;
         text-align: left;
     }
+    .header-container>a{
+        margin-left: 0;
+    }
     .ourName button{
      margin: 0;
      min-width: 255px;
-     font-size: 2.4rem;;
+     font-size: 2.4rem;
+     padding: 15px 20px
     }
-    .ourName img{
-       
-        max-width: 700px;
+    .girl{
+    
+        max-width: 600px;
 
     }
+    .nav-links a{
     
+        font-size: 3rem;
+    
+        
+     }
     
 
     
@@ -195,7 +302,7 @@ header img{
 /* ###ABOUT US### */
 
 
-.about-us{
+#about-us{
     background-color: var(--light);
 }
 
@@ -213,11 +320,12 @@ h2{
     line-height: 130%;
     text-align: justify;
     color: var(--dark);
+    margin-bottom: 20px;
 }
 
 
 
-.about-us img{
+#about-us img{
     width: 100%;
     height: auto;
     aspect-ratio: 1;
@@ -225,13 +333,13 @@ h2{
     border-radius: 25px;
     
 }
-.about-us .img-container{
+#about-us .img-container{
     position:  relative;
     margin-top:30px;
 }
 
 
-.about-us .img-container::after, .project-gallery::after {
+#about-us .img-container::after, .project-gallery::after {
     content: "";
     position: absolute;
     top: 0;
@@ -266,6 +374,9 @@ h2{
         padding: 40px 40px 60px 40px;
 
     }
+    #about-us{
+        align-items: start;
+    }
 
     
     h2{
@@ -279,16 +390,17 @@ h2{
         font-size: 2rem;
         line-height: 140%;
     }
-    .about-us .text-container{
+    #about-us .text-container{
         order:2;
     }
-    .about-us img{
+    #about-us img{
         width: 40vw;
         max-width: 500px;
         height: auto;
         aspect-ratio: 10/9; 
+        
     }
-    .about-us .img-container{
+    #about-us .img-container{
         position:  relative;
         margin-top: 60px;
         margin-right: 60px;
@@ -306,11 +418,11 @@ h2{
 
 /* #########PROJECTS############### */
 
-.projects h2, footer h2{
+#projects h2, #contact h2{
     color: var(--light);
 }
 
-.projects .section-description, footer .section-description{
+#projects .section-description, #contact .section-description{
     color: var(--light);
 }
 
@@ -335,12 +447,11 @@ h3{
 .project-gallery{
     position: relative;
     width: 100%;
-    height: auto;
-    aspect-ratio: 1/1.2; 
+    min-height: auto;
+    aspect-ratio: 1/0.9; 
     border-radius: 0 0 25px 25px;
     overflow:hidden; 
 }
-
 
 
 
@@ -367,7 +478,7 @@ h3{
 @media(min-width: 500px){
 
     .project-card p, .team-card p {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         line-height: 130%;
     }
   }
@@ -375,7 +486,7 @@ h3{
 /* ##### */
 
 @media(min-width: 1000px){
-.projects{
+#projects{
     display: flex;
     flex-direction: column;
 }
@@ -420,7 +531,7 @@ aspect-ratio: auto;
 }
 /* #########OUR-TEAM################# */
 
-.our-team{
+#our-team{
     background-color: var(--light);
 }
 
@@ -514,7 +625,7 @@ h4{
 
 
 @media(min-width: 1000px){
-.our-team{
+#our-team{
     display: flex;
     flex-direction: column;
 }
@@ -546,22 +657,22 @@ h4{
 
 }
 
-/* ###########FOOTER########## */
+/* ############contact########## */
 
 
 
-footer img{
+#contact img{
     width: 100px;
-    fill: var(--light);
+    
 
 }
 
-footer strong{
+#contact strong{
 font-size: 2.0rem;
 margin: 25px 0;
 color: var(--light);
 }
-.footer-icons{
+#contact .contact-icons{
 align-self: start;
 }
 .icon{
@@ -573,7 +684,7 @@ align-self: start;
 }
 
 @media(min-width: 1000px){
-    footer{
+    #contact{
         display: grid;
         grid-template-columns: 2fr 1fr 2fr;
         grid-template-rows: 1fr 1fr 1fr;
@@ -582,7 +693,7 @@ align-self: start;
         padding: 40px 40px 60px 40px;
         gap: 20px;
     }
-    footer h2{
+    #contact h2{
         order: 1;
         justify-self: left;
         margin: 0;
@@ -590,23 +701,23 @@ align-self: start;
 
         
     }
-    footer img{
+    #contact img{
         order: 3;
         grid-row: 2 / span 3;
         width: 120px;
     
     }
-    footer strong{
+    #contact strong{
         font-size: 2.2rem;
         order: 4;
         grid-row-start: 2;
         justify-self: left;
     }
-    footer .section-description{
+    #contact .section-description{
         order: 2;
         grid-row: 2/span3;
     }
-    .footer-icons{
+     #contact .contact-icons{
         order: 5;
         grid-column-start:3;
         grid-row-start:3;
@@ -617,7 +728,7 @@ align-self: start;
 }
 /* ########## */
 @media(min-width:1600px){
-    footer{
+    #contact{
         padding-left: 10vw;
         padding-right: 10vw;
     }
