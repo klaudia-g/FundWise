@@ -1,4 +1,4 @@
-![ScreenShot](/assets/screen.jpg)
+![](https://github.com/klaudia-g/FundWise/blob/master/assets/FundWise.gif)
 
 # FundWise Website Project
 ## Project description
