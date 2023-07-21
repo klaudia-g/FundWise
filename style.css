@@ -23,6 +23,9 @@ body{
     min-height: 100vh;
     width: 100%;
     background-color: var(--firstColor);
+    
+}
+.wrapper{
     overflow-x: hidden;
 }
 /* ######ANIMATIONS##### */
